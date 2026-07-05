@@ -46,7 +46,14 @@ def spawn_monsters(matrix, count):
     floor_cells = []
     # Здесь нужно во floor_cells поместить координаты (x, y) тех клеток матрицы, где стоит единичка
     # Писать код тут!!!
-
+    y = 0
+    for i in matrix:
+        x = 0
+        for j in i:
+            if j == 1:
+                floor_cells.append((x, y))
+            x += 1
+        y += 1
 
 
 
@@ -54,12 +61,14 @@ def spawn_monsters(matrix, count):
     # Нам нужно расставить энное количество монстров в клетках, значит нужно взять такое количество рандомных клеток.
     # Для этого перемешиваем floor_cells и берем первые count штук
     # Писать код тут!!!
-
+    random_cells = random.shuffle(floor_cells)[:count]
 
     # Мы получили список с нужным количеством отобранных координат
     # Проходимся циклом по выбранным координатам, берем случайного монстра из шаблона и по его характеристикам создаем монстра в нужных координатах x и y
     # добавляем монстра в список monsters
-
+    for i in random_cells:
+        abcd = random.choice(templates)
+        monsters.append(Monster(name=abcd["name"], x=i[0], y=i[1], hp=abcd["hp"], attack_power=abcd["attack_power"], defense=abcd["defense"], exp=abcd["exp"]))
 
 
     return monsters
