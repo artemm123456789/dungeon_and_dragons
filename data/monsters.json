@@ -1,0 +1,7 @@
+[
+    {"name": "Гоблин", "hp": 6, "attack_power": 3, "defense": 1, "exp": 5},
+    {"name": "Крыса", "hp": 3, "attack_power": 2, "defense": 0, "exp": 2},
+    {"name": "Скелет", "hp": 10, "attack_power": 5, "defense": 2, "exp": 8},
+    {"name": "Паук-охотник", "hp": 8, "attack_power": 4, "defense": 1, "exp": 6},
+    {"name": "Орк", "hp": 15, "attack_power": 7, "defense": 3, "exp": 12}
+]
