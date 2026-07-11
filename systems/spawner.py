@@ -1,7 +1,7 @@
 import json
 import random
 from typing import List, Tuple
-from models.monster import Monster
+from dungeon_and_dragons.models.monster import Monster
 import os
 
 
@@ -61,7 +61,8 @@ def spawn_monsters(matrix, count):
     # Нам нужно расставить энное количество монстров в клетках, значит нужно взять такое количество рандомных клеток.
     # Для этого перемешиваем floor_cells и берем первые count штук
     # Писать код тут!!!
-    random_cells = random.shuffle(floor_cells)[:count]
+    random.shuffle(floor_cells)
+    random_cells = floor_cells[:count]
 
     # Мы получили список с нужным количеством отобранных координат
     # Проходимся циклом по выбранным координатам, берем случайного монстра из шаблона и по его характеристикам создаем монстра в нужных координатах x и y
