@@ -1,4 +1,4 @@
-from models.entity import Entity
+from dungeon_and_dragons.models.entity import Entity
 
 class Player(Entity):
     def __init__(self, name, x, y, hp, max_hp,

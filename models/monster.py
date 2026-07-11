@@ -1,4 +1,4 @@
-from models.entity import Entity
+from dungeon_and_dragons.models.entity import Entity
 
 class Monster(Entity):
     def __init__(self, name, x, y, hp, attack_power, defense, exp):
