@@ -8,8 +8,29 @@ class Renderer:
         self.state = game_state
         self.tile_size = 20  # Размер одного тайла в пикселях
 
+    def update_fog_of_war(self):
+        dungeon = self.state.dungeon
+        player = self.state.player
+
+        if not dungeon or not player:
+            return
+
+        for dy in range(-1, 2):
+            for dx in range(-1, 2):
+                dungeon.explored.add((player.x + dx, player.y + dy))
+
+        for (rx, ry, rw, rh) in dungeon.rooms:
+            if rx <= player.x < rx + rw and ry <= player.y < ry + rh:
+                for y in range(ry - 1, ry + rh + 1):
+                    for x in range(rx - 1, rx + rw + 1):
+                        dungeon.explored.add((x, y))
+
+
+
     def render(self):
         self.screen.fill((0, 0, 0))  # Заливка экрана черным фоном
+
+        self.update_fog_of_war()
 
         # 1. Рисуем карту
         dungeon = self.state.dungeon
@@ -18,11 +39,12 @@ class Renderer:
             for i in dungeon.matrix:
                 x = 0
                 for tile in i:
-                    if tile == 1:
-                        color = COLORS['floor']
-                    else:
-                        color = COLORS['wall']
-                    pygame.draw.rect(self.screen, color, [x * self.tile_size, y * self.tile_size, self.tile_size, self.tile_size])
+                    if (x, y) in dungeon.explored:
+                        if tile == 1:
+                            color = COLORS['floor']
+                        else:
+                            color = COLORS['wall']
+                        pygame.draw.rect(self.screen, color, [x * self.tile_size, y * self.tile_size, self.tile_size, self.tile_size])
                     x += 1
                 y += 1
 
@@ -32,7 +54,7 @@ class Renderer:
 
         # 2. Рисуем монстров
         for monster in self.state.monsters:
-            if monster.is_alive:
+            if monster.is_alive and dungeon and (monster.x, monster.y) in dungeon.explored:
                 x = monster.x * self.tile_size + self.tile_size // 2
                 y = monster.y * self.tile_size + self.tile_size // 2
                 radius = self.tile_size // 2
