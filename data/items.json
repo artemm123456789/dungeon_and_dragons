@@ -1,0 +1,35 @@
+[
+  {"name": "Деревянный меч", "rarity": 1, "function": "wooden_sword_func", "reverse_function": "wooden_sword_rev_func", "slot": 0},
+  {"name": "Стальной меч", "rarity": 2, "function": "steel_sword_func", "reverse_function": "steel_sword_rev_func", "slot": 0},
+  {"name": "Древний меч", "rarity": 3, "function": "ancient_sword_func", "reverse_function": "ancient_sword_rev_func", "slot": 0},
+  {"name": "Меч Героя", "rarity": 4, "function": "hero_sword_func", "reverse_function": "hero_sword_rev_func", "slot": 0},
+
+  {"name": "Кожанный шлем", "rarity": 1, "function": "leather_helmet_func", "reverse_function": "leather_helmet_rev_func", "slot": 1},
+  {"name": "Стальной шлем", "rarity": 2, "function": "steel_helmet_func", "reverse_function": "steel_helmet_rev_func", "slot": 1},
+  {"name": "Древний шлем", "rarity": 3, "function": "ancient_helmet_func", "reverse_function": "ancient_helmet_rev_func", "slot": 1},
+  {"name": "Шлем Героя", "rarity": 4, "function": "hero_helmet_func", "reverse_function": "hero_helmet_rev_func", "slot": 1},
+
+  {"name": "Кожаный доспех", "rarity": 1, "function": "leather_armor_func", "reverse_function": "leather_armor_rev_func", "slot": 2},
+  {"name": "Стальной доспех", "rarity": 2, "function": "steel_armor_func", "reverse_function": "steel_armor_rev_func", "slot": 2},
+  {"name": "Древний доспех", "rarity": 3, "function": "ancient_armor_func", "reverse_function": "ancient_armor_rev_func", "slot": 2},
+  {"name": "Доспех Героя", "rarity": 4, "function": "hero_armor_func", "reverse_function": "hero_armor_rev_func", "slot": 2},
+
+  {"name": "Кожаные сапоги", "rarity": 1, "function": "leather_boots_func", "reverse_function": "leather_boots_rev_func", "slot": 3},
+  {"name": "Стальные сапоги", "rarity": 2, "function": "steel_boots_func", "reverse_function": "steel_boots_rev_func", "slot": 3},
+  {"name": "Древние сапоги", "rarity": 3, "function": "ancient_boots_func", "reverse_function": "ancient_boots_rev_func", "slot": 3},
+  {"name": "Сапоги Героя", "rarity": 4, "function": "hero_boots_func", "reverse_function": "hero_boots_rev_func", "slot": 3},
+
+  {"name": "Деревянный щит", "rarity": 1, "function": "wooden_shield_func", "reverse_function": "wooden_shield_rev_func", "slot": 4},
+  {"name": "Стальной щит", "rarity": 2, "function": "steel_shield_func", "reverse_function": "steel_shield_rev_func", "slot": 4},
+  {"name": "Древний щит", "rarity": 3, "function": "ancient_shield_func", "reverse_function": "ancient_shield_rev_func", "slot": 4},
+  {"name": "Щит Героя", "rarity": 4, "function": "hero_shield_func", "reverse_function": "hero_shield_rev_func", "slot": 4},
+
+  {"name": "Амулет здоровья", "rarity": 1, "function": "amulet_of_health_func", "reverse_function": "amulet_of_health_rev_func", "slot": 5},
+  {"name": "Амулет защиты", "rarity": 2, "function": "amulet_of_defense_func", "reverse_function": "amulet_of_defense_rev_func", "slot": 5},
+  {"name": "Амулет атаки", "rarity": 3, "function": "amulet_of_attack_func", "reverse_function": "amulet_of_attack_rev_func", "slot": 5},
+  {"name": "Амулет Героя", "rarity": 4, "function": "amulet_of_hero_func", "reverse_function": "amulet_of_hero_rev_func", "slot": 5},
+
+  {"name":  "test-equip2", "rarity": 2, "function": "test_equip2_func", "reverse_function": "test_equip2_rev_func", "slot": 0},
+  {"name":  "test-equip3", "rarity": 4, "function": "test_equip3_func", "reverse_function": "test_equip3_rev_func", "slot": 1},
+  {"name":  "test-item1", "rarity": 3, "function": "", "reverse_function": "", "slot": ""}
+]
