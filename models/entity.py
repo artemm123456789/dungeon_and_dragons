@@ -13,7 +13,7 @@ class Entity:
         self.is_alive = is_alive
 
     def take_damage(self, damage):
-        actual_damage = max(0, damage - self.defense)
+        actual_damage = damage
         self.hp -= actual_damage
         if self.hp <= 0:
             self.hp = 0

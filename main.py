@@ -1,3 +1,5 @@
+import random
+
 import pygame
 import sys
 from game_state import GameState
@@ -7,6 +9,7 @@ from systems.map_generator import generate_dungeon
 from systems.spawner import spawn_monsters
 from systems.battle import melee_attack
 from graphics.renderer import Renderer
+from dungeon_and_dragons.systems import item_generator
 
 
 class Game:
@@ -53,6 +56,8 @@ class Game:
                 if not monster.is_alive:
                     self.state.monsters.remove(monster)
                     self.state.add_message(f"💀 {monster.name} повержен!")
+                    if random.randint(1, 100) <= 20:
+                        player.get_item(item_generator.generate_random_drop_from_monster(monster.exp))
                 self.state.turn_counter += 1
                 return
         player.x = new_x
