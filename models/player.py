@@ -35,7 +35,7 @@ class Player(Entity):
 
     def remove_item(self, slot):
         item = player.equipment_slots[slot]
-        item.deactivate
+        item.deactivate(self)
         player.slots[slot] = 0
 
 
