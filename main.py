@@ -32,7 +32,8 @@ class Game:
             x=start_x, y=start_y,
             hp=30, max_hp=30,
             attack_power=5,
-            defense=2
+            defense=2,
+            next_level_exp=20
         )
         self.state.monsters = spawn_monsters(matrix, count=8)
         self.state.add_message("🔥 Добро пожаловать в Подземелье!")
