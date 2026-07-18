@@ -30,7 +30,6 @@ class Player(Entity):
                     item.activate(self)
                 else:
                     print(f"Вам выпал {item.name}, но слот занят {player.equipment_slots[item.slot].name}")
-                    player.inventory.append(item)
 
 
 
