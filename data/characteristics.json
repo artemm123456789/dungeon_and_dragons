@@ -1,0 +1,9 @@
+{
+    "hp": 30,
+    "max_hp": 39,
+    "attack_power": 8,
+    "defense": 2,
+    "level": 4,
+    "exp": 46,
+    "next_level_exp": 67.5
+}

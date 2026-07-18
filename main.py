@@ -24,6 +24,7 @@ class Game:
     def initialize(self):
         matrix, start_x, start_y = generate_dungeon(width=45, height=20, rooms_count=8)
         self.state.dungeon = Dungeon(matrix=matrix)
+        #открыть json файл, загрузить характеристики и поставить их игроку
         self.state.player = Player(
             name="Hero",
             x=start_x, y=start_y,
