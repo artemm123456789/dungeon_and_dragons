@@ -97,7 +97,7 @@ def generate_dungeon(width=45, height=20, rooms_count=8):
     else:
         start_x, start_y = 1, 1  # На случай, если комнат нет
 
-    return matrix, start_x, start_y
+    return matrix, start_x, start_y, rooms # добавлен возврат rooms
 
 
 
