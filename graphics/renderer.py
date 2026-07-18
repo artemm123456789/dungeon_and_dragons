@@ -12,16 +12,16 @@ class Renderer:
         dungeon = self.state.dungeon
         player = self.state.player
 
-        if not dungeon or not player:
+        if not dungeon or not player:  # если игрока или уровня не существует, вернуть
             return
 
-        for dy in range(-1, 2):
+        for dy in range(-1, 2):     # открытие коридоров вокруг игрока
             for dx in range(-1, 2):
                 dungeon.explored.add((player.x + dx, player.y + dy))
 
-        for (rx, ry, rw, rh) in dungeon.rooms:
-            if rx <= player.x < rx + rw and ry <= player.y < ry + rh:
-                for y in range(ry - 1, ry + rh + 1):
+        for (rx, ry, rw, rh) in dungeon.rooms: # открытие комнат
+            if rx <= player.x < rx + rw and ry <= player.y < ry + rh:   # проверка, находится ли игрок внутри комнаты
+                for y in range(ry - 1, ry + rh + 1):    # открыть всю комнату с запасом тайлов-границ комнаты
                     for x in range(rx - 1, rx + rw + 1):
                         dungeon.explored.add((x, y))
 
