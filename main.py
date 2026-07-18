@@ -32,7 +32,8 @@ class Game:
             x=start_x, y=start_y,
             hp=30, max_hp=30,
             attack_power=5,
-            defense=2
+            defense=2,
+            next_level_exp=20
         )
         self.state.monsters = spawn_monsters(matrix, count=8)
         self.state.add_message("🔥 Добро пожаловать в Подземелье!")
@@ -56,6 +57,8 @@ class Game:
                 if not monster.is_alive:
                     self.state.monsters.remove(monster)
                     self.state.add_message(f"💀 {monster.name} повержен!")
+                    self.state.player.exp += monster.exp
+                    player.next_level()
                     if random.randint(1, 100) <= 20:
                         player.get_item(item_generator.generate_random_drop_from_monster(monster.exp))
                 self.state.turn_counter += 1
