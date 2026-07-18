@@ -57,6 +57,8 @@ class Game:
                 if not monster.is_alive:
                     self.state.monsters.remove(monster)
                     self.state.add_message(f"💀 {monster.name} повержен!")
+                    self.state.player.exp += monster.exp
+                    player.next_level()
                     if random.randint(1, 100) <= 20:
                         player.get_item(item_generator.generate_random_drop_from_monster(monster.exp))
                 self.state.turn_counter += 1
